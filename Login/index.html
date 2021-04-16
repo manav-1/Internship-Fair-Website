@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="paper.js" type="text/javascript"></script>
+</head>
+
+<body onload="document.getElementById('form').reset()">
+    <div class="header__logo-box">
+        <a href="../index.html">
+            <img src="../img/logo.png" alt="Logo" height=50 class="header__logo">
+        </a>
+    </div>
+    <div class="login-container">
+        <form id='form' method = "post" action="./login.php" class="form-login">
+            <ul class="login-nav">
+                <li class="login-nav__item active">
+                    <a href="#">LogIn</a>
+                </li>
+            </ul>
+            <label for="login-input-user" class="login__label">
+                Email
+            </label>
+            <input name="email" id="login-input-user" class="login__input" type="text" />
+            <label for="login-input-password" class="login__label">
+                Password
+            </label>
+            <input name="password" id="login-input-password" class="login__input" type="password" />
+            <label for="login-sign-up" class="login__label--checkbox">
+                <input id="login-sign-up" type="checkbox" onclick="Toggle()" class="login__input--checkbox" />
+                Show Password
+            </label>
+            <script>
+                // Change the type of input to password or text 
+                function Toggle() {
+                    var temp = document.getElementById("login-input-password");
+                    var cbox = document.getElementById("login-sign-up").checked
+                    if (cbox == true) {
+                        temp.type = "text";
+                    } else {
+                        temp.type = "password";
+                    }
+                }
+            </script>
+            <button class="login__submit" type = "submit">Sign in</button>
+        </form>
+        
+        <a href="#" class="login__forgot">Forgot Password?</a>
+        <p class="login_forgot">Haven't signed up <a class="reg" href ="../registration/index.html">Register Here</a></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
